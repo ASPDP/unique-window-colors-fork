@@ -1,10 +1,10 @@
 {
-  "name": "unique-window-colors",
-  "displayName": "Window Colors",
-  "description": "Automatically adds a unique color to each window's activityBar and titleBar.",
+  "name": "alt-unique-window-colors",
+  "displayName": "Window Colors including status bar",
+  "description": "Fork of stuart.unique-window-colors that also colors status bar.",
   "icon": "img/icon_602.png",
-  "version": "1.0.50",
-  "publisher": "stuart",
+  "version": "1.0.51",
+  "publisher": "qpwo",
   "author": {
     "name": "Stuart Robinson"
   },
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stuartcrobinson/unique-window-colors"
+    "url": "https://github.com/qpwo/unique-window-colors-fork.git"
   },
   "categories": [
     "Other",
@@ -76,11 +76,11 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.22",
-    "tslint": "^5.8.0",
+    "@types/mocha": "^2.2.42",
     "@types/node": "^8.10.25",
-    "@types/mocha": "^2.2.42"
+    "tslint": "^5.8.0",
+    "typescript": "^5.6.3",
+    "vscode": "^1.1.22"
   },
   "dependencies": {
     "@types/color": "^3.0.0",
