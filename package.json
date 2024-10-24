@@ -3,7 +3,7 @@
   "displayName": "Window Colors including status bar",
   "description": "Fork of stuart.unique-window-colors that also colors status bar.",
   "icon": "img/icon_602.png",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "publisher": "qpwo",
   "author": {
     "name": "Stuart Robinson"
@@ -69,11 +69,12 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    "bundle": "rm -rf out && node build_it.mjs && vsce package",
+    "//vscode:prepublish": "npm run compile",
+    "//compile": "tsc -p ./",
+    "//watch": "tsc -watch -p ./",
+    "//postinstall": "node ./node_modules/vscode/bin/install",
+    "//test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.42",
@@ -84,6 +85,7 @@
   },
   "dependencies": {
     "@types/color": "^3.0.0",
-    "color": "^3.1.0"
+    "color": "^3.1.0",
+    "esbuild": "^0.24.0"
   }
 }

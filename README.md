@@ -1,3 +1,8 @@
+<img src="https://raw.githubusercontent.com/qpwo/unique-window-colors/master/img/fullcolor.png" alt="drawing" width="330"/> &nbsp;&nbsp;&nbsp;
+
+
+fixed and working!
+
 # Window Colors
 
 Uniquely and automatically colors each VSCode window.
@@ -17,9 +22,9 @@ This extension gives each new VS Code window a unique color based on a hash of t
   }
 ```
 
-The extension deletes this file and folder each time the VS Code window is closed unless the colors have been modified or unless they contain any other settings.  
+The extension deletes this file and folder each time the VS Code window is closed unless the colors have been modified or unless they contain any other settings.
 
-You can optionally set a single Base Color (see Window Colors settings) by hex code or css color name.  
+You can optionally set a single Base Color (see Window Colors settings) by hex code or css color name.
 
 ## Usage with Git
 

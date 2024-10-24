@@ -1,4 +1,5 @@
-import * as Color from 'color';
+// import * as Color from 'color';
+import Color from 'color';
 import * as fs from 'fs';
 import { ExtensionContext, workspace, WorkspaceFolder } from 'vscode';
 

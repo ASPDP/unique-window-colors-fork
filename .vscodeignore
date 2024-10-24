@@ -7,3 +7,10 @@ src/**
 tsconfig.json
 vsc-extension-quickstart.md
 tslint.json
+node_modules/**
+pnpm-lock.yaml
+notes.txt
+img/*
+img/*/*
+!img/icon_602.png
+build_it.mjs
