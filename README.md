@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/qpwo/unique-window-colors/master/img/fullcolor.png" alt="drawing" width="330"/> &nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/qpwo/unique-window-colors-fork/master/img/fullcolor.png" alt="drawing" width="330"/> &nbsp;&nbsp;&nbsp;
 
 
 fixed and working!
