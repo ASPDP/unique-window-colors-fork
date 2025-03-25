@@ -1,24 +1,23 @@
 {
-  "publisher": "antfu",
-  "name": "ext-name",
-  "displayName": "ext-name",
+  "publisher": "wrath-codes",
+  "name": "nvim_ui_plus",
+  "displayName": "Nvim UI+",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.4.1",
-  "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
+  "description": "Enhance your VS Code Neovim experience with dynamic UI theming based on Neovim modes",
+  "author": "wrath <raphael@wrath.codes>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/ext-name#readme",
+  "homepage": "https://github.com/wrath-codes/nvim_ui_plus#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antfu/ext-name"
+    "url": "https://github.com/wrath-codes/nvim_ui_plus"
   },
   "bugs": {
-    "url": "https://github.com/antfu/ext-name/issues"
+    "url": "https://github.com/wrath-codes/nvim_ui_plus/issues"
   },
   "sponsor": {
-    "url": "https://github.com/sponsors/antfu"
+    "url": "https://github.com/sponsors/wrath-codes"
   },
   "categories": [
     "Other"
@@ -37,11 +36,107 @@
     "onStartupFinished"
   ],
   "contributes": {
-    "commands": [],
+    "commands": [
+      {
+        "command": "nvim_ui_plus.setMode",
+        "title": "Set Neovim Mode",
+        "when": "false"  
+      },
+      {
+        "command": "nvim_ui_plus.showCurrentMode",
+        "title": "Check Current Neovim Mode",
+        "category": "Neovim UI+"
+      }
+    ],
     "configuration": {
-      "type": "object",
-      "title": "ext-name",
-      "properties": {}
+      "title": "Neovim UI+",
+      "properties": {
+        "nvim_ui_plus.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Neovim UI+ theming"
+        },
+        "nvim_ui_plus.uiElements.editorCursor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to editor cursor"
+        },
+        "nvim_ui_plus.uiElements.inputValidation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to input validation borders"
+        },
+        "nvim_ui_plus.uiElements.panelTitle": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to panel titles"
+        },
+        "nvim_ui_plus.uiElements.peekView": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to peek view elements"
+        },
+        "nvim_ui_plus.uiElements.tabs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to tabs"
+        },
+        "nvim_ui_plus.uiElements.activityBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to activity bar elements"
+        },
+        "nvim_ui_plus.uiElements.titleBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to title bar"
+        },
+        "nvim_ui_plus.uiElements.statusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to status bar elements"
+        },
+        "nvim_ui_plus.uiElements.editor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to editor elements like selections"
+        },
+        "nvim_ui_plus.uiElements.suggestWidget": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to suggestion widget"
+        },
+        "nvim_ui_plus.uiElements.lineNumbers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Apply mode color to active line numbers"
+        },
+        "nvim_ui_plus.colors.normal": {
+          "type": "string",
+          "default": "#89B4FA",
+          "description": "Color for normal mode (Catppuccin blue)"
+        },
+        "nvim_ui_plus.colors.insert": {
+          "type": "string",
+          "default": "#A6E3A1",
+          "description": "Color for insert mode (Catppuccin green)"
+        },
+        "nvim_ui_plus.colors.visual": {
+          "type": "string",
+          "default": "#CBA6F7",
+          "description": "Color for visual mode (Catppuccin mauve)"
+        },
+        "nvim_ui_plus.colors.replace": {
+          "type": "string",
+          "default": "#F38BA8",
+          "description": "Color for replace mode (Catppuccin red)"
+        },
+        "nvim_ui_plus.colors.cmdline": {
+          "type": "string",
+          "default": "#F9E2AF",
+          "description": "Color for command line mode (Catppuccin yellow)"
+        }
+      }
     }
   },
   "scripts": {
