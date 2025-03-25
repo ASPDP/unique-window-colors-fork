@@ -22,7 +22,7 @@ export function setupNeovimModeManager() {
     // Update the status bar text based on the mode
     switch (mode) {
       case 'insert':
-        modeStatusBarItem.text = "$(sparkle) INSERT"
+        modeStatusBarItem.text = "$(wrench) INSERT"
         break
       case 'visual':
         modeStatusBarItem.text = "$(eye) VISUAL"
