@@ -5,9 +5,7 @@
 
 ## What's this?
 
-Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by making the UI adapt to your current Vim mode. Think of it as mood lighting for your editor - different colors for different modes so you always know where you are. 
-
-![Screenshot of Nvim UI+ in action](https://example.com/screenshot.png)
+Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by making the UI adapt to your current Vim mode. Think of it as mood lighting for your editor - different colors for different modes so you always know where you are.
 
 ## Cool Stuff It Does
 
@@ -31,7 +29,7 @@ Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by mak
 
 Add this to your Neovim config:
 
-```lua:init.lua
+```lua
 -- For init.lua
 local vscode = require("vscode")
 
@@ -122,11 +120,47 @@ Pick and choose which parts of VSCode should change with your mode:
 
 Set your own colors for each mode (defaults to Catppuccin colors):
 
-- `normal`: Teal `#94E2D5` - for Normal mode
-- `insert`: Sapphire `#74C7EC` - for Insert mode
-- `visual`: Mauve `#CBA6F7` - for Visual mode
-- `replace`: Maroon `#EBA0AC` - for Replace mode
-- `cmdline`: Peach `#FAB387` - for Command-line mode
+<details>
+<summary>🎨 Catppuccin Mocha Colors</summary>
+<table>
+ <tr>
+  <th>Mode</th>
+  <th>Color</th>
+  <th>Hex</th>
+  <th>Preview</th>
+ </tr>
+ <tr>
+  <td>Normal</td>
+  <td>Teal</td>
+  <td><code>#94E2D5</code></td>
+  <td><span style="display:inline-block;width:20px;height:20px;background-color:#94E2D5;border-radius:3px"></span></td>
+ </tr>
+ <tr>
+  <td>Insert</td>
+  <td>Sapphire</td>
+  <td><code>#74C7EC</code></td>
+  <td><span style="display:inline-block;width:20px;height:20px;background-color:#74C7EC;border-radius:3px"></span></td>
+ </tr>
+ <tr>
+  <td>Visual</td>
+  <td>Mauve</td>
+  <td><code>#CBA6F7</code></td>
+  <td><span style="display:inline-block;width:20px;height:20px;background-color:#CBA6F7;border-radius:3px"></span></td>
+ </tr>
+ <tr>
+  <td>Replace</td>
+  <td>Maroon</td>
+  <td><code>#EBA0AC</code></td>
+  <td><span style="display:inline-block;width:20px;height:20px;background-color:#EBA0AC;border-radius:3px"></span></td>
+ </tr>
+ <tr>
+  <td>Command</td>
+  <td>Peach</td>
+  <td><code>#FAB387</code></td>
+  <td><span style="display:inline-block;width:20px;height:20px;background-color:#FAB387;border-radius:3px"></span></td>
+ </tr>
+</table>
+</details>
 
 ## How It Works
 
