@@ -53,7 +53,6 @@ export function setupThemeManager() {
     'panelTitle.activeBorder': 'panelTitle',
     'peekView.border': 'peekView',
     'peekViewTitleLabel.foreground': 'peekView',
-    'peekViewTitle.background': 'peekView',
     'tab.activeBorder': 'tabs',
     'tab.activeBorderTop': 'tabs',
     'tab.activeForeground': 'tabs',
@@ -66,7 +65,10 @@ export function setupThemeManager() {
     'statusBar.border': 'statusBar',
     'statusBar.foreground': 'statusBar',
     'editor.selectionHighlightBorder': 'editor',
+    'editor.selectionForeground': 'editor',
     'editor.findMatchBorder': 'editor',
+    'editorMultiCursor.primary.foreground': 'editor',
+    'editorMultiCursor.secondary.foreground': 'editor',
     'editorSuggestWidget.border': 'suggestWidget',
     'editorLineNumber.activeForeground': 'lineNumbers',
   }
