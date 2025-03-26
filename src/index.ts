@@ -1,8 +1,7 @@
-import { defineExtension, useDisposable,useCommand } from 'reactive-vscode'
+import { defineExtension, useCommand, useDisposable } from 'reactive-vscode'
 import { extensions, window } from 'vscode'
 // import { registerCommands } from './commands'
-import { currentMode } from "./neovimModeManager"
-import { setupNeovimModeManager } from './neovimModeManager'
+import { currentMode, setupNeovimModeManager } from './neovimModeManager'
 import { setupThemeManager } from './themeManager'
 import { logger } from './utils'
 
@@ -30,8 +29,7 @@ const { activate, deactivate } = defineExtension(async () => {
       return
     }
   }
-  
-  
+
   // Set up the mode manager
   const modeManager = setupNeovimModeManager()
   useDisposable({ dispose: modeManager })
