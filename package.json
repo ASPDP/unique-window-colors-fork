@@ -39,14 +39,11 @@
     "commands": [
       {
         "command": "nvim-ui-plus.setMode",
-        "title": "Set Neovim Mode",
-        "when": "false"
+        "title": "Set Neovim Mode"
       },
       {
         "command": "nvim-ui-plus.showCurrentMode",
-        "title": "Check Current Neovim Mode",
-        "category": "Neovim UI+",
-        "when": "false"
+        "title": "Check Current Neovim Mode"
       }
     ],
     "configuration": {
