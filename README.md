@@ -133,31 +133,31 @@ Set your own colors for each mode (defaults to Catppuccin colors):
 		<td>Normal</td>
 		<td>Teal</td>
 		<td><code>#94E2D5</code></td>
-		<td><img src="assets/palette/circles/mocha_teal.png" width="23"/></td>
+		<td><img src="assets/mocha_teal.png" width="23"/></td>
 	</tr>
 	<tr>
 		<td>Insert</td>
 		<td>Sapphire</td>
 		<td><code>#74C7EC</code></td>
-		<td><img src="assets/palette/circles/mocha_sapphire.png" width="23"/></td>
+		<td><img src="assets/mocha_sapphire.png" width="23"/></td>
 	</tr>
 	<tr>
 		<td>Visual</td>
 		<td>Mauve</td>
 		<td><code>#CBA6F7</code></td>
-		<td><img src="assets/palette/circles/mocha_mauve.png" width="23"/></td>
+		<td><img src="assets/mocha_mauve.png" width="23"/></td>
 	</tr>
 	<tr>
 		<td>Replace</td>
 		<td>Maroon</td>
 		<td><code>#EBA0AC</code></td>
-		<td><img src="assets/palette/circles/mocha_maroon.png" width="23"/></td>
+		<td><img src="assets/mocha_maroon.png" width="23"/></td>
 	</tr>
 	<tr>
 		<td>Command</td>
 		<td>Peach</td>
 		<td><code>#FAB387</code></td>
-		<td><img src="assets/palette/circles/mocha_peach.png" width="23"/></td>
+		<td><img src="assets/mocha_peach.png" width="23"/></td>
 	</tr>
 </table>
 </details>
