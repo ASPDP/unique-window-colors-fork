@@ -9,7 +9,6 @@
   "author": "wrath <raphael@wrath.codes>",
   "license": "MIT",
   "homepage": "https://github.com/wrath-codes/nvim_ui_plus#readme",
-  "extensionDependencies": ["asvetliakov.vscode-neovim"],
   "repository": {
     "type": "git",
     "url": "https://github.com/wrath-codes/nvim_ui_plus"
