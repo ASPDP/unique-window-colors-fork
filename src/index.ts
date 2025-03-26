@@ -6,7 +6,7 @@ import { setupThemeManager } from './themeManager'
 import { logger } from './utils'
 
 const { activate, deactivate } = defineExtension(async () => {
-  logger.info('nvim_ui_plus extension activated')
+  logger.info('nvim-ui-plus extension activated')
 
   // Check if neovim extension is installed
   const vscode_nvim_ext = extensions.getExtension('asvetliakov.vscode-neovim')

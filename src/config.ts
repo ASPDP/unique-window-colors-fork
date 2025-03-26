@@ -27,7 +27,7 @@ interface NvimUiPlusConfig {
 }
 
 // Define our UI configuration with the proper type
-export const nvimUiConfig = defineConfigObject('nvim_ui_plus', {
+export const nvimUiConfig = defineConfigObject('nvim-ui-plus', {
   enabled: Boolean,
 
   uiElements: {

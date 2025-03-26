@@ -5,7 +5,7 @@ import { logger } from './utils'
 
 export function registerCommands() {
   // Register a command to receive mode updates from Neovim
-  useCommand('nvim_ui_plus.setMode', (args: { mode: string }) => {
+  useCommand('nvim-ui-plus.setMode', (args: { mode: string }) => {
     if (!args || typeof args.mode !== 'string') {
       logger.warn(`Received invalid args:`, args)
       return false
@@ -17,7 +17,7 @@ export function registerCommands() {
   })
 
   // Add a command to check the current mode
-  useCommand('nvim_ui_plus.showCurrentMode', () => {
+  useCommand('nvim-ui-plus.showCurrentMode', () => {
     window.showInformationMessage(`Current Neovim mode: ${currentMode.value}`)
   })
 }
