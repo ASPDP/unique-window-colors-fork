@@ -68,7 +68,6 @@ export function setupThemeManager() {
     'editor.selectionHighlightBorder': 'editor',
     'editor.findMatchBorder': 'editor',
     'editorSuggestWidget.border': 'suggestWidget',
-    'editorSuggestWidget.selectedBackground': 'suggestWidget',
     'editorLineNumber.activeForeground': 'lineNumbers',
   }
 
