@@ -122,11 +122,11 @@ Pick and choose which parts of VSCode should change with your mode:
 
 Set your own colors for each mode (defaults to Catppuccin colors):
 
-- `normal`: Teal (#94E2D5) - for Normal mode
-- `insert`: Sapphire (#74C7EC) - for Insert mode
-- `visual`: Mauve (#CBA6F7) - for Visual mode 
-- `replace`: Maroon (#EBA0AC) - for Replace mode
-- `cmdline`: Peach (#FAB387) - for Command-line mode
+- `normal`: Teal (`#94E2D5`) - for Normal mode
+- `insert`: Sapphire (`#74C7EC`) - for Insert mode
+- `visual`: Mauve (`#CBA6F7`) - for Visual mode 
+- `replace`: Maroon (`#EBA0AC`) - for Replace mode
+- `cmdline`: Peach (`#FAB387`) - for Command-line mode
 
 ## How It Works
 
@@ -135,5 +135,3 @@ The extension listens for mode changes from Neovim, then updates VSCode's interf
 ## License
 
 [MIT](./LICENSE.md) License
-
-![#FF9933](https://via.placeholder.com/15/FF9933/000000?text=+)  `#FF9933`
