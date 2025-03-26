@@ -1,7 +1,7 @@
 import { defineConfigs } from 'reactive-vscode'
 
 // Define configuration for the extension - without destructuring nested properties
-export const config = defineConfigs('nvim_ui_plus', {
+export const config = defineConfigs('nvim-ui-plus', {
   enabled: Boolean,
 
   uiElements: {
