@@ -5,7 +5,7 @@
 
 ## What's this?
 
-Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by making the UI adapt to your current Vim mode. Think of it as mood lighting for your editor - different colors for different modes so you always know where you are.
+Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by making the UI adapt to your current Vim mode. Think of it as mood lighting for your editor - different colors for different modes so you always know where you are. 
 
 ![Screenshot of Nvim UI+ in action](https://example.com/screenshot.png)
 
@@ -124,7 +124,7 @@ Set your own colors for each mode (defaults to Catppuccin colors):
 
 - `normal`: Teal (#94E2D5) - for Normal mode
 - `insert`: Sapphire (#74C7EC) - for Insert mode
-- `visual`: Mauve (#CBA6F7) - for Visual mode
+- `visual`: Mauve (#CBA6F7) - for Visual mode 
 - `replace`: Maroon (#EBA0AC) - for Replace mode
 - `cmdline`: Peach (#FAB387) - for Command-line mode
 
@@ -135,5 +135,4 @@ The extension listens for mode changes from Neovim, then updates VSCode's interf
 ## License
 
 [MIT](./LICENSE.md) License
-
 ![#FF9933](https://via.placeholder.com/15/FF9933/000000?text=+)  `#FF9933`
