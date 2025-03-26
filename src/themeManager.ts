@@ -65,7 +65,6 @@ export function setupThemeManager() {
     'titleBar.border': 'titleBar',
     'statusBar.border': 'statusBar',
     'statusBar.foreground': 'statusBar',
-    'editor.selectionBackground': 'editor',
     'editor.selectionHighlightBorder': 'editor',
     'editor.findMatchBorder': 'editor',
     'editorSuggestWidget.border': 'suggestWidget',

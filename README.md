@@ -116,7 +116,7 @@ Pick and choose which parts of VSCode should change with your mode:
 - `activityBar`: The sidebar icon bar
 - `titleBar`: The window title at the top
 - `statusBar`: The info bar at the bottom
-- `editor`: Selection highlights in your code
+- `editor`: Selection highlights border in your code
 - `suggestWidget`: Intellisense suggestion popups
 - `lineNumbers`: The active line number
 
