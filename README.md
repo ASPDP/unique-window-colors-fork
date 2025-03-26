@@ -57,7 +57,7 @@ local function notify_vscode_mode()
         mode_name = mode
     end
     --  Call VSCode extension to update UI asynchronously
-    vscode.action("nvim_ui_plus.setMode", {
+    vscode.action("nvim-ui-plus.setMode", {
         args = { mode = mode_name }
     })
 end
