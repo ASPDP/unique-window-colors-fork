@@ -1,9 +1,9 @@
 import { defineExtension, useDisposable } from 'reactive-vscode'
+import { extensions, window } from 'vscode'
 import { registerCommands } from './commands'
 import { setupNeovimModeManager } from './neovimModeManager'
 import { setupThemeManager } from './themeManager'
 import { logger } from './utils'
-import {window, extensions } from 'vscode'
 
 const { activate, deactivate } = defineExtension(async () => {
   logger.info('nvim-ui-plus extension activated')
