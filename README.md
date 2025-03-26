@@ -135,4 +135,5 @@ The extension listens for mode changes from Neovim, then updates VSCode's interf
 ## License
 
 [MIT](./LICENSE.md) License
+
 ![#FF9933](https://via.placeholder.com/15/FF9933/000000?text=+)  `#FF9933`
