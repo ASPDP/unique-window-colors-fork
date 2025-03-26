@@ -94,24 +94,23 @@ export function setupThemeManager() {
       
       switch (mode) {
         case 'normal':
-          modeColor = colors.normal || '#89B4FA'
+          modeColor = colors.normal || '#94E2D5' // Teal fallback
           break
         case 'insert':
-          modeColor = colors.insert || '#A6E3A1'
+          modeColor = colors.insert || '#74C7EC' // Sapphire fallback
           break
         case 'visual':
-          modeColor = colors.visual || '#CBA6F7'
+          modeColor = colors.visual || '#CBA6F7' // Mauve fallback
           break
         case 'replace':
-          modeColor = colors.replace || '#F38BA8'
+          modeColor = colors.replace || '#EBA0AC' // Maroon fallback
           break
         case 'cmdline':
-          modeColor = colors.cmdline || '#F9E2AF'
+          modeColor = colors.cmdline || '#FAB387' // Peach fallback
           break
         default:
-          modeColor = colors.normal || '#89B4FA'
-      }
-      
+          modeColor = colors.normal || '#94E2D5' // Teal fallback
+      }      
       const workbenchConfig = workspace.getConfiguration('workbench')
       
       // Store original customizations if we haven't already

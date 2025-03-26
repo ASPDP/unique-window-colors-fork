@@ -3,109 +3,80 @@
 <a href="https://marketplace.visualstudio.com/items?itemName=wrath-codes.nvim_ui_plus" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/wrath-codes.nvim_ui_plus.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 <a href="https://kermanx.github.io/reactive-vscode/" target="__blank"><img src="https://img.shields.io/badge/made_with-reactive--vscode-%23007ACC?style=flat&labelColor=%23229863"  alt="Made with reactive-vscode" /></a>
 
-## Overview
+## What's this?
 
-Nvim UI+ enhances your VSCode Neovim experience by providing rich visual feedback of your current Vim mode. It transforms VSCode's interface elements to match your Vim mode, creating a more immersive and intuitive editing experience.
+Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by making the UI adapt to your current Vim mode. Think of it as mood lighting for your editor - different colors for different modes so you always know where you are.
 
 ![Screenshot of Nvim UI+ in action](https://example.com/screenshot.png)
 
-## Features
+## Cool Stuff It Does
 
-- 🌈 **Mode-aware UI**: VSCode's UI elements change color based on your current Neovim mode
-- 📊 **Colorful status bar indicator**: Prominent status bar item shows your current mode with intuitive colors and icons
-- ⚙️ **Highly customizable**: Configure which UI elements respond to mode changes and define your own color scheme
-- 🔄 **Real-time updates**: Interface updates instantly when switching between Normal, Insert, Visual, Replace, and Command modes
+- 🌈 **UI that knows your mode**: VSCode's interface changes color based on your Neovim mode
+- 📊 **Mode indicator that pops**: The status bar shows your current mode with neat icons and colors
+- ⚙️ **Make it yours**: Pick which UI bits change and choose your own colors
+- 🔄 **Instant feedback**: See changes immediately when switching between modes
 
-## Requirements
+## Before You Install
 
-- [VSCode Neovim extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) must be installed
+- You need the [VSCode Neovim extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) installed
 
-## Installation
+## Getting Started
 
-1. Install the VSCode Neovim extension
-2. Install Nvim UI+
-3. Add the required Neovim configuration (see below)
-4. Restart VSCode
+1. Grab the VSCode Neovim extension
+2. Install this extension (Nvim UI+)
+3. Add a bit of Lua to your Neovim config (see below)
+4. Restart VSCode and enjoy!
 
-### Neovim Configuration
+### Neovim Config Setup
 
-Add the following to your Neovim configuration file (init.lua or init.vim):
+Add this to your Neovim config:
 
-```lua
+```lua:init.lua
 -- For init.lua
-if vim.g.vscode then
-  -- Add autocommands to notify VSCode about mode changes
-  local function notify_current_mode()
+local vscode = require("vscode")
+
+local function notify_vscode_mode()
     local mode = vim.api.nvim_get_mode().mode
     local mode_name = ""
-    
+    -- Convert Neovim mode to readable name
     if mode == "n" then
-      mode_name = "normal"
-    elseif mode == "i" or mode == "ic" or mode == "ix" then
-      mode_name = "insert"
-    elseif mode == "v" or mode == "V" or mode == "\22" then -- \22 is <C-v>
-      mode_name = "visual"
+        mode_name = "normal"
+    elseif mode == "i" then
+        mode_name = "insert"
+    elseif mode == "v" then
+        mode_name = "visual"
+    elseif mode == "V" then
+        mode_name = "visual"  
+    elseif mode == "\22" then 
+        mode_name = "visual"  
     elseif mode == "c" then
-      mode_name = "cmdline"
+        mode_name = "cmdline"
     elseif mode == "R" then
-      mode_name = "replace"
+        mode_name = "replace"
     else
-      mode_name = "normal" -- default to normal for other modes
+        mode_name = mode
     end
-    
-    vim.fn.VSCodeNotify("nvim_ui_plus.setMode", { mode = mode_name })
-  end
-  
-  -- Create autocommand group
-  vim.api.nvim_create_augroup("NvimUiPlus", { clear = true })
-  
-  -- Add autocommands for different events that might change the mode
-  vim.api.nvim_create_autocmd({"ModeChanged"}, {
-    group = "NvimUiPlus",
-    callback = notify_current_mode,
-  })
-  
-  -- Initial mode notification
-  vim.api.nvim_create_autocmd({"VimEnter"}, {
-    group = "NvimUiPlus",
-    callback = notify_current_mode,
-  })
+    --  Call VSCode extension to update UI asynchronously
+    vscode.action("nvim_ui_plus.setMode", {
+        args = { mode = mode_name }
+    })
 end
+
+-- Mode change notification autocmd
+vim.api.nvim_create_autocmd("ModeChanged", {
+    pattern = "*",
+    callback = notify_vscode_mode,
+})
+
+-- Notify on initial load
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+    callback = notify_vscode_mode,
+})
 ```
 
-```vim
-" For init.vim
-if exists('g:vscode')
-  function! NotifyVSCodeOfMode()
-    let mode = mode()
-    let mode_name = "normal"
-    
-    if mode ==# "n"
-      let mode_name = "normal"
-    elseif mode ==# "i" || mode ==# "ic" || mode ==# "ix"
-      let mode_name = "insert"
-    elseif mode ==# "v" || mode ==# "V" || mode ==# "\<C-v>"
-      let mode_name = "visual"
-    elseif mode ==# "c"
-      let mode_name = "cmdline"
-    elseif mode ==# "R"
-      let mode_name = "replace"
-    endif
-    
-    call VSCodeNotify("nvim_ui_plus.setMode", {"mode": mode_name})
-  endfunction
-  
-  augroup NvimUiPlus
-    autocmd!
-    autocmd ModeChanged * call NotifyVSCodeOfMode()
-    autocmd VimEnter * call NotifyVSCodeOfMode()
-  augroup END
-endif
-```
+## Tweaking to Your Taste
 
-## Configuration
-
-Nvim UI+ can be configured through VSCode settings:
+You can customize everything through VSCode settings:
 
 ```json
 "nvim_ui_plus.enabled": true,
@@ -123,48 +94,46 @@ Nvim UI+ can be configured through VSCode settings:
   "lineNumbers": true
 },
 "nvim_ui_plus.colors": {
-  "normal": "#89B4FA",  // Catppuccin blue
-  "insert": "#A6E3A1",  // Catppuccin green
+  "normal": "#94E2D5",  // Catppuccin teal
+  "insert": "#74C7EC",  // Catppuccin sapphire
   "visual": "#CBA6F7",  // Catppuccin mauve
-  "replace": "#F38BA8", // Catppuccin red
-  "cmdline": "#F9E2AF"  // Catppuccin yellow
+  "replace": "#EBA0AC", // Catppuccin maroon
+  "cmdline": "#FAB387"  // Catppuccin peach
 }
 ```
 
-### UI Elements
+### UI Elements You Can Theme
 
-Choose which VSCode UI elements should change color based on the current mode:
+Pick and choose which parts of VSCode should change with your mode:
 
-- `editorCursor`: Changes the cursor color
-- `inputValidation`: Changes validation borders in input boxes
-- `panelTitle`: Changes the active panel title 
-- `peekView`: Changes peek view borders and titles
-- `tabs`: Changes active tab indicators
-- `activityBar`: Changes activity bar highlights
-- `titleBar`: Changes title bar text and borders
-- `statusBar`: Changes status bar elements
-- `editor`: Changes editor selection highlights
-- `suggestWidget`: Changes suggestion widget borders and backgrounds
-- `lineNumbers`: Changes active line number color
+- `editorCursor`: Your text cursor
+- `inputValidation`: Those borders you see in input boxes
+- `panelTitle`: Titles in panels like terminal and output
+- `peekView`: The peek definition windows
+- `tabs`: Your document tabs
+- `activityBar`: The sidebar icon bar
+- `titleBar`: The window title at the top
+- `statusBar`: The info bar at the bottom
+- `editor`: Selection highlights in your code
+- `suggestWidget`: Intellisense suggestion popups
+- `lineNumbers`: The active line number
 
 ### Mode Colors
 
-Define custom colors for each Neovim mode:
+Set your own colors for each mode (defaults to Catppuccin colors):
 
-- `normal`: Color for Normal mode (default: Catppuccin blue)
-- `insert`: Color for Insert mode (default: Catppuccin green)
-- `visual`: Color for Visual mode (default: Catppuccin mauve)
-- `replace`: Color for Replace mode (default: Catppuccin red)
-- `cmdline`: Color for Command-line mode (default: Catppuccin yellow)
+- `normal`: Teal (#94E2D5) - for Normal mode
+- `insert`: Sapphire (#74C7EC) - for Insert mode
+- `visual`: Mauve (#CBA6F7) - for Visual mode
+- `replace`: Maroon (#EBA0AC) - for Replace mode
+- `cmdline`: Peach (#FAB387) - for Command-line mode
 
-## Commands
+## How It Works
 
-- `nvim-ui-plus.showCurrentMode`: Shows a notification with the current Neovim mode
-
-## Implementation
-
-This extension uses VSCode's context values set by the Neovim extension to detect the current mode. When the mode changes, it updates the interface elements and status bar to match the configured colors for that mode.
+The extension listens for mode changes from Neovim, then updates VSCode's interface accordingly. Your Neovim config sends mode information to VSCode, and we handle the rest!
 
 ## License
 
 [MIT](./LICENSE.md) License
+
+![#FF9933](https://via.placeholder.com/15/FF9933/000000?text=+)  `#FF9933`
