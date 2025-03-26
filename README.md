@@ -123,42 +123,42 @@ Set your own colors for each mode (defaults to Catppuccin colors):
 <details>
 <summary>🎨 Catppuccin Mocha Colors</summary>
 <table>
- <tr>
-  <th>Mode</th>
-  <th>Color</th>
-  <th>Hex</th>
-  <th>Preview</th>
- </tr>
- <tr>
-  <td>Normal</td>
-  <td>Teal</td>
-  <td><code>#94E2D5</code></td>
-  <td><span style="display:inline-block;width:20px;height:20px;background-color:#94E2D5;border-radius:3px"></span></td>
- </tr>
- <tr>
-  <td>Insert</td>
-  <td>Sapphire</td>
-  <td><code>#74C7EC</code></td>
-  <td><span style="display:inline-block;width:20px;height:20px;background-color:#74C7EC;border-radius:3px"></span></td>
- </tr>
- <tr>
-  <td>Visual</td>
-  <td>Mauve</td>
-  <td><code>#CBA6F7</code></td>
-  <td><span style="display:inline-block;width:20px;height:20px;background-color:#CBA6F7;border-radius:3px"></span></td>
- </tr>
- <tr>
-  <td>Replace</td>
-  <td>Maroon</td>
-  <td><code>#EBA0AC</code></td>
-  <td><span style="display:inline-block;width:20px;height:20px;background-color:#EBA0AC;border-radius:3px"></span></td>
- </tr>
- <tr>
-  <td>Command</td>
-  <td>Peach</td>
-  <td><code>#FAB387</code></td>
-  <td><span style="display:inline-block;width:20px;height:20px;background-color:#FAB387;border-radius:3px"></span></td>
- </tr>
+	<tr>
+		<th>Mode</th>
+		<th>Color</th>
+		<th>Hex</th>
+		<th>Preview</th>
+	</tr>
+	<tr>
+		<td>Normal</td>
+		<td>Teal</td>
+		<td><code>#94E2D5</code></td>
+		<td><img src="assets/palette/circles/mocha_teal.png" width="23"/></td>
+	</tr>
+	<tr>
+		<td>Insert</td>
+		<td>Sapphire</td>
+		<td><code>#74C7EC</code></td>
+		<td><img src="assets/palette/circles/mocha_sapphire.png" width="23"/></td>
+	</tr>
+	<tr>
+		<td>Visual</td>
+		<td>Mauve</td>
+		<td><code>#CBA6F7</code></td>
+		<td><img src="assets/palette/circles/mocha_mauve.png" width="23"/></td>
+	</tr>
+	<tr>
+		<td>Replace</td>
+		<td>Maroon</td>
+		<td><code>#EBA0AC</code></td>
+		<td><img src="assets/palette/circles/mocha_maroon.png" width="23"/></td>
+	</tr>
+	<tr>
+		<td>Command</td>
+		<td>Peach</td>
+		<td><code>#FAB387</code></td>
+		<td><img src="assets/palette/circles/mocha_peach.png" width="23"/></td>
+	</tr>
 </table>
 </details>
 
