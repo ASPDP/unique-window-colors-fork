@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD033 MD045 -->
+
 # Nvim UI+
 
 <a href="https://marketplace.visualstudio.com/items?itemName=wrath-codes.nvim_ui_plus" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/wrath-codes.nvim_ui_plus.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
@@ -44,9 +46,9 @@ local function notify_vscode_mode()
     elseif mode == "v" then
         mode_name = "visual"
     elseif mode == "V" then
-        mode_name = "visual"  
-    elseif mode == "\22" then 
-        mode_name = "visual"  
+        mode_name = "visual"
+    elseif mode == "\22" then
+        mode_name = "visual"
     elseif mode == "c" then
         mode_name = "cmdline"
     elseif mode == "R" then
@@ -77,26 +79,28 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 You can customize everything through VSCode settings:
 
 ```json
-"nvim_ui_plus.enabled": true,
-"nvim_ui_plus.uiElements": {
-  "editorCursor": true,
-  "inputValidation": true,
-  "panelTitle": true,
-  "peekView": true,
-  "tabs": true,
-  "activityBar": true,
-  "titleBar": true,
-  "statusBar": true,
-  "editor": true,
-  "suggestWidget": true,
-  "lineNumbers": true
-},
-"nvim_ui_plus.colors": {
-  "normal": "#94E2D5",  // Catppuccin teal
-  "insert": "#74C7EC",  // Catppuccin sapphire
-  "visual": "#CBA6F7",  // Catppuccin mauve
-  "replace": "#EBA0AC", // Catppuccin maroon
-  "cmdline": "#FAB387"  // Catppuccin peach
+{
+  "nvim_ui_plus.enabled": true,
+  "nvim_ui_plus.uiElements": {
+    "editorCursor": true,
+    "inputValidation": true,
+    "panelTitle": true,
+    "peekView": true,
+    "tabs": true,
+    "activityBar": true,
+    "titleBar": true,
+    "statusBar": true,
+    "editor": true,
+    "suggestWidget": true,
+    "lineNumbers": true
+  },
+  "nvim_ui_plus.colors": {
+    "normal": "#94E2D5", // Catppuccin teal
+    "insert": "#74C7EC", // Catppuccin sapphire
+    "visual": "#CBA6F7", // Catppuccin mauve
+    "replace": "#EBA0AC", // Catppuccin maroon
+    "cmdline": "#FAB387" // Catppuccin peach
+  }
 }
 ```
 
@@ -123,42 +127,42 @@ Set your own colors for each mode (defaults to Catppuccin colors):
 <details>
 <summary>🎨 Catppuccin Mocha Colors</summary>
 <table>
-	<tr>
-		<th>Mode</th>
-		<th>Color</th>
-		<th>Hex</th>
-		<th>Preview</th>
-	</tr>
-	<tr>
-		<td>Normal</td>
-		<td>Teal</td>
-		<td><code>#94E2D5</code></td>
-		<td><img src="assets/mocha_teal.png" width="23"/></td>
-	</tr>
-	<tr>
-		<td>Insert</td>
-		<td>Sapphire</td>
-		<td><code>#74C7EC</code></td>
-		<td><img src="assets/mocha_sapphire.png" width="23"/></td>
-	</tr>
-	<tr>
-		<td>Visual</td>
-		<td>Mauve</td>
-		<td><code>#CBA6F7</code></td>
-		<td><img src="assets/mocha_mauve.png" width="23"/></td>
-	</tr>
-	<tr>
-		<td>Replace</td>
-		<td>Maroon</td>
-		<td><code>#EBA0AC</code></td>
-		<td><img src="assets/mocha_maroon.png" width="23"/></td>
-	</tr>
-	<tr>
-		<td>Command</td>
-		<td>Peach</td>
-		<td><code>#FAB387</code></td>
-		<td><img src="assets/mocha_peach.png" width="23"/></td>
-	</tr>
+ <tr>
+  <th>Mode</th>
+  <th>Color</th>
+  <th>Hex</th>
+  <th>Preview</th>
+ </tr>
+ <tr>
+  <td>Normal</td>
+  <td>Teal</td>
+  <td><code>#94E2D5</code></td>
+  <td><img src="assets/mocha_teal.png" width="23"/></td>
+ </tr>
+ <tr>
+  <td>Insert</td>
+  <td>Sapphire</td>
+  <td><code>#74C7EC</code></td>
+  <td><img src="assets/mocha_sapphire.png" width="23"/></td>
+ </tr>
+ <tr>
+  <td>Visual</td>
+  <td>Mauve</td>
+  <td><code>#CBA6F7</code></td>
+  <td><img src="assets/mocha_mauve.png" width="23"/></td>
+ </tr>
+ <tr>
+  <td>Replace</td>
+  <td>Maroon</td>
+  <td><code>#EBA0AC</code></td>
+  <td><img src="assets/mocha_maroon.png" width="23"/></td>
+ </tr>
+ <tr>
+  <td>Command</td>
+  <td>Peach</td>
+  <td><code>#FAB387</code></td>
+  <td><img src="assets/mocha_peach.png" width="23"/></td>
+ </tr>
 </table>
 </details>
 
