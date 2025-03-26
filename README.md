@@ -80,8 +80,8 @@ You can customize everything through VSCode settings:
 
 ```json
 {
-  "nvim_ui_plus.enabled": true,
-  "nvim_ui_plus.uiElements": {
+  "nvim-ui-plus.enabled": true,
+  "nvim-ui-plus.uiElements": {
     "editorCursor": true,
     "inputValidation": true,
     "panelTitle": true,
@@ -94,7 +94,7 @@ You can customize everything through VSCode settings:
     "suggestWidget": true,
     "lineNumbers": true
   },
-  "nvim_ui_plus.colors": {
+  "nvim-ui-plus.colors": {
     "normal": "#94E2D5", // Catppuccin teal
     "insert": "#74C7EC", // Catppuccin sapphire
     "visual": "#CBA6F7", // Catppuccin mauve
