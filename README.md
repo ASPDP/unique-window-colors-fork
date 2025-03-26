@@ -124,7 +124,7 @@ Set your own colors for each mode (defaults to Catppuccin colors):
 
 - `normal`: Teal (`#94E2D5`) - for Normal mode
 - `insert`: Sapphire (`#74C7EC`) - for Insert mode
-- `visual`: Mauve (`#CBA6F7`) - for Visual mode 
+- `visual`: Mauve (`#CBA6F7`) - for Visual mode
 - `replace`: Maroon (`#EBA0AC`) - for Replace mode
 - `cmdline`: Peach (`#FAB387`) - for Command-line mode
 
