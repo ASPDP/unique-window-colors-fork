@@ -32,7 +32,8 @@ Hey there! Nvim UI+ takes your VSCode Neovim experience to the next level by mak
 1. Grab the VSCode Neovim extension
 2. Install this extension (Nvim UI+)
 3. Add a bit of Lua to your Neovim config (see below)
-4. Restart VSCode and enjoy!
+4. Make sure you are in a workspace
+5. Restart VSCode and enjoy!
 
 ### Neovim Config Setup
 

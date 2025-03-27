@@ -22,6 +22,20 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "neovim",
+    "vim",
+    "nvim",
+    "vscode-neovim",
+    "ui",
+    "theme",
+    "color",
+    "colorscheme",
+    "mode",
+    "whichkey",
+    "which-key"
+  ],
+  
   "main": "./dist/index.js",
   "icon": "res/icon.png",
   "files": [
