@@ -1,6 +1,5 @@
 import { defineExtension, useCommand, useDisposable } from 'reactive-vscode'
 import { extensions, window } from 'vscode'
-// import { registerCommands } from './commands'
 import { currentMode, setupNeovimModeManager } from './neovimModeManager'
 import { setupThemeManager } from './themeManager'
 import { logger } from './utils'
@@ -21,9 +20,6 @@ const { activate, deactivate } = defineExtension(async () => {
     // Wait for the extension to be activated by VSCode
     await vscode_nvim_ext.activate()
     logger.info('vscode-neovim extension is active')
-
-    // Continue with the rest of your extension initialization
-    // ...
   }
   catch (err) {
     logger.error('Failed to wait for vscode-neovim extension:', err)
@@ -39,9 +35,6 @@ const { activate, deactivate } = defineExtension(async () => {
   const themeManager = setupThemeManager()
   useDisposable({ dispose: themeManager })
 
-  // Register command to update mode from Neovim
-  // registerCommands()
-  //
   // Register a command to receive mode updates from Neovim
   useCommand('nvim-ui-plus.setMode', (args: { mode: string }) => {
     if (!args || typeof args.mode !== 'string') {

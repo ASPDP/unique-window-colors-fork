@@ -42,14 +42,14 @@
         "category": "Neovim UI+",
         "title": "Set Neovim Mode",
         "icon": "res/vim.svg",
-        "when": false
+        "when": "neovim.init"
       },
       {
         "command": "nvim-ui-plus.showCurrentMode",
         "category": "Neovim UI+",
         "title": "Check Current Neovim Mode",
         "icon": "res/vim.svg",
-        "when": false
+        "when": "neovim.init"
       }
     ],
     "configuration": {
