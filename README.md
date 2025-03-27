@@ -78,54 +78,36 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 
 You can customize everything through VSCode settings:
 
-```json
-{
-  "nvim-ui-plus.enabled": true,
-  "nvim-ui-plus.uiElements": {
-    "editorCursor": true,
-    "inputValidation": true,
-    "panelTitle": true,
-    "peekView": true,
-    "tabs": true,
-    "activityBar": true,
-    "titleBar": true,
-    "statusBar": true,
-    "editor": true,
-    "suggestWidget": true,
-    "lineNumbers": true
-  },
-  "nvim-ui-plus.colors": {
-    "normal": "#94E2D5", // Catppuccin teal
-    "insert": "#74C7EC", // Catppuccin sapphire
-    "visual": "#CBA6F7", // Catppuccin mauve
-    "replace": "#EBA0AC", // Catppuccin maroon
-    "cmdline": "#FAB387" // Catppuccin peach
-  }
-}
-```
+<!-- configs -->
 
-### UI Elements You Can Theme
+| Key                                       | Description                                         | Type      | Default     |
+| ----------------------------------------- | --------------------------------------------------- | --------- | ----------- |
+| `nvim-ui-plus.enabled`                    | Enable Neovim UI+ theming                           | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.editorCursor`    | Apply mode color to editor cursor                   | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.inputValidation` | Apply mode color to input validation borders        | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.panelTitle`      | Apply mode color to panel titles                    | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.peekView`        | Apply mode color to peek view elements              | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.tabs`            | Apply mode color to tabs                            | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.activityBar`     | Apply mode color to activity bar elements           | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.titleBar`        | Apply mode color to title bar                       | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.statusBar`       | Apply mode color to status bar elements             | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.editor`          | Apply mode color to editor elements like selections | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.suggestWidget`   | Apply mode color to suggestion widget               | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.lineNumbers`     | Apply mode color to active line numbers             | `boolean` | `true`      |
+| `nvim-ui-plus.colors.normal`              | Color for normal mode (Catppuccin teal)             | `string`  | `"#94E2D5"` |
+| `nvim-ui-plus.colors.insert`              | Color for insert mode (Catppuccin sapphire)         | `string`  | `"#74C7EC"` |
+| `nvim-ui-plus.colors.visual`              | Color for visual mode (Catppuccin mauve)            | `string`  | `"#CBA6F7"` |
+| `nvim-ui-plus.colors.replace`             | Color for replace mode (Catppuccin maroon)          | `string`  | `"#EBA0AC"` |
+| `nvim-ui-plus.colors.cmdline`             | Color for command line mode (Catppuccin peach)      | `string`  | `"#FAB387"` |
 
-Pick and choose which parts of VSCode should change with your mode:
-
-- `editorCursor`: Your text cursor
-- `inputValidation`: Those borders you see in input boxes
-- `panelTitle`: Titles in panels like terminal and output
-- `peekView`: The peek definition windows
-- `tabs`: Your document tabs
-- `activityBar`: The sidebar icon bar
-- `titleBar`: The window title at the top
-- `statusBar`: The info bar at the bottom
-- `editor`: Selection highlights border in your code
-- `suggestWidget`: Intellisense suggestion popups
-- `lineNumbers`: The active line number
+<!-- configs -->
 
 ### Mode Colors
 
 Set your own colors for each mode (defaults to Catppuccin colors):
 
-<details>
-<summary>🎨 Catppuccin Mocha Colors</summary>
+#### 🎨 Catppuccin Mocha Colors
+
 <table>
  <tr>
   <th>Mode</th>
@@ -164,7 +146,6 @@ Set your own colors for each mode (defaults to Catppuccin colors):
   <td><img src="assets/mocha_peach.png" width="23"/></td>
  </tr>
 </table>
-</details>
 
 ## How It Works
 
