@@ -16,18 +16,19 @@ const { activate, deactivate } = defineExtension(async () => {
     return
   }
 
-  // Try to activate the vscode-neovim extension if it's not already active
-  if (!vscode_nvim_ext.isActive) {
-    logger.info('Activating vscode-neovim extension...')
-    try {
-      await vscode_nvim_ext.activate()
-      logger.info('vscode-neovim extension activated successfully')
-    }
-    catch (err) {
-      logger.error('Failed to activate vscode-neovim extension:', err)
-      window.showErrorMessage('Failed to activate vscode-neovim extension')
-      return
-    }
+  // Use the whenReady method which returns a promise that resolves when the extension is activated
+  try {
+    // Wait for the extension to be activated by VSCode
+    await vscode_nvim_ext.activate()
+    logger.info('vscode-neovim extension is active')
+
+    // Continue with the rest of your extension initialization
+    // ...
+  }
+  catch (err) {
+    logger.error('Failed to wait for vscode-neovim extension:', err)
+    window.showErrorMessage('Failed to connect to vscode-neovim extension')
+    return
   }
 
   // Set up the mode manager
