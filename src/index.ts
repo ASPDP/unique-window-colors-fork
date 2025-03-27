@@ -1,5 +1,5 @@
 import { defineExtension, useCommand, useDisposable } from 'reactive-vscode'
-import { extensions, window } from 'vscode'
+import {  window } from 'vscode'
 import { currentMode, setupNeovimModeManager } from './neovimModeManager'
 import { setupThemeManager } from './themeManager'
 import { logger } from './utils'
@@ -7,25 +7,25 @@ import { logger } from './utils'
 const { activate, deactivate } = defineExtension(async () => {
   logger.info('nvim-ui-plus extension activated')
 
-  // Check if neovim extension is installed
-  const vscode_nvim_ext = extensions.getExtension('asvetliakov.vscode-neovim')
-  if (!vscode_nvim_ext) {
-    logger.error('vscode-neovim is not installed')
-    window.showErrorMessage('vscode-neovim is not installed. Please install it to use this extension.')
-    return
-  }
+  // // Check if neovim extension is installed
+  // const vscode_nvim_ext = extensions.getExtension('asvetliakov.vscode-neovim')
+  // if (!vscode_nvim_ext) {
+  //   logger.error('vscode-neovim is not installed')
+  //   window.showErrorMessage('vscode-neovim is not installed. Please install it to use this extension.')
+  //   return
+  // }
 
-  // Use the whenReady method which returns a promise that resolves when the extension is activated
-  try {
-    // Wait for the extension to be activated by VSCode
-    await vscode_nvim_ext.activate()
-    logger.info('vscode-neovim extension is active')
-  }
-  catch (err) {
-    logger.error('Failed to wait for vscode-neovim extension:', err)
-    window.showErrorMessage('Failed to connect to vscode-neovim extension')
-    return
-  }
+  // // Use the whenReady method which returns a promise that resolves when the extension is activated
+  // try {
+  //   // Wait for the extension to be activated by VSCode
+  //   await vscode_nvim_ext.activate()
+  //   logger.info('vscode-neovim extension is active')
+  // }
+  // catch (err) {
+  //   logger.error('Failed to wait for vscode-neovim extension:', err)
+  //   window.showErrorMessage('Failed to connect to vscode-neovim extension')
+  //   return
+  // }
 
   // Set up the mode manager
   const modeManager = setupNeovimModeManager()
