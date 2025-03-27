@@ -1,5 +1,5 @@
 import { defineExtension, useCommand, useDisposable } from 'reactive-vscode'
-import {  window } from 'vscode'
+import { window } from 'vscode'
 import { currentMode, setupNeovimModeManager } from './neovimModeManager'
 import { setupThemeManager } from './themeManager'
 import { logger } from './utils'
