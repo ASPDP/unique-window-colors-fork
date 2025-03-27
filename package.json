@@ -2,8 +2,8 @@
   "publisher": "wrathcodes",
   "name": "nvim-ui-plus",
   "displayName": "Nvim UI+",
-  "version": "0.0.13",
-  "private": false,
+  "version": "0.0.14",
+  "private": true,
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
   "description": "Enhance your VS Code Neovim experience with dynamic UI theming based on Neovim modes",
   "author": "wrath <raphael@wrath.codes>",
@@ -39,11 +39,17 @@
     "commands": [
       {
         "command": "nvim-ui-plus.setMode",
-        "title": "Set Neovim Mode"
+        "category": "Neovim UI+",
+        "title": "Set Neovim Mode",
+        "icon": "res/vim.svg",
+        "when": false
       },
       {
         "command": "nvim-ui-plus.showCurrentMode",
-        "title": "Check Current Neovim Mode"
+        "category": "Neovim UI+",
+        "title": "Check Current Neovim Mode",
+        "icon": "res/vim.svg",
+        "when": false
       }
     ],
     "configuration": {
@@ -153,7 +159,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
     "@antfu/ni": "^23.3.1",
-    "@types/node": "^22.13.13",
+    "@types/node": "^22.13.14",
     "@types/vscode": "^1.98.0",
     "@vscode/vsce": "^3.3.1",
     "bumpp": "^10.1.0",
