@@ -2,8 +2,15 @@
 
 # Nvim UI+
 
-<a href="https://marketplace.visualstudio.com/items?itemName=wrathcodes.nvim-ui-plus" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/wrathcodes.nvim-ui-plus.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+<p align="center">
+  <img src="./res/icon.png" height="128"><br>
+  <b>Nvim UI+</b> - Neovim mode indicator for VSCode
+</p>
+
+<p align="center">
+<a href="https://marketplace.visualstudio.com/items?itemName=wrathcodes.nvim-ui-plus" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/wrathcodes.nvim-ui-plus.svg?color=%234c1&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 <a href="https://kermanx.github.io/reactive-vscode/" target="__blank"><img src="https://img.shields.io/badge/made_with-reactive--vscode-%23007ACC?style=flat&labelColor=%23229863"  alt="Made with reactive-vscode" /></a>
+</p>
 
 ## What's this?
 
