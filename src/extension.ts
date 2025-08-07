@@ -40,7 +40,8 @@ export class SettingsFileDeleter {
       const aColorWasModified =
         (cc['activityBar.background'] !== this.colors.sideBarColor_dark.hex() && cc['activityBar.background'] !== this.colors.sideBarColor_light.hex()) ||
         (cc['titleBar.activeBackground'] !== this.colors.titleBarColor_dark.hex() && cc['titleBar.activeBackground'] !== this.colors.titleBarColor_light.hex()) ||
-        (cc['titleBar.activeForeground'] !== this.colors.titleBarTextColor_dark.hex() && cc['titleBar.activeForeground'] !== this.colors.titleBarTextColor_light.hex());
+        (cc['titleBar.inactiveBackground'] !== this.colors.titleBarColor_dark.hex() && cc['titleBar.inactiveBackground'] !== this.colors.titleBarColor_light.hex()) ||
+        (cc['titleBar.activeForeground'] !== this.colors.titleBarTextColor_dark.hex() && cc['titleBar.activeForeground'] !== this.colors.titleBarTextColor_light.hex()) ||
         (cc['statusBar.background'] !== this.colors.titleBarColor_dark.hex() && cc['statusBar.background'] !== this.colors.titleBarColor_light.hex()) ||
         (cc['statusBar.foreground'] !== this.colors.titleBarTextColor_dark.hex() && cc['statusBar.foreground'] !== this.colors.titleBarTextColor_light.hex());
 
@@ -115,7 +116,7 @@ export function activate(context: ExtensionContext) {
 
   let doUpdateColors = true;
 
-  if (cc && (cc['activityBar.background'] || cc['titleBar.activeBackground'] || cc['titleBar.activeForeground'] || cc['statusBar.foreground'] || cc['statusBar.background'])) {
+  if (cc && (cc['activityBar.background'] || cc['titleBar.activeBackground'] || cc['titleBar.inactiveBackground'] || cc['titleBar.activeForeground'] || cc['statusBar.foreground'] || cc['statusBar.background'])) {
     //don't overwrite
     doUpdateColors = false;
   }
@@ -129,6 +130,7 @@ export function activate(context: ExtensionContext) {
     const newColors = {
       "activityBar.background": doRemoveColors ? undefined : sideBarColor.hex(),
       "titleBar.activeBackground": doRemoveColors ? undefined : titleBarColor.hex(),
+      "titleBar.inactiveBackground": doRemoveColors ? undefined : titleBarColor.hex(),
       "titleBar.activeForeground": doRemoveColors ? undefined : titleBarTextColor.hex(),
       "statusBar.background": doRemoveColors ? undefined : titleBarColor.hex(),
       "statusBar.foreground": doRemoveColors ? undefined : titleBarTextColor.hex(),
