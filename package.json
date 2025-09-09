@@ -2,7 +2,7 @@
   "publisher": "wrathcodes",
   "name": "nvim-ui-plus",
   "displayName": "Nvim UI+",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "private": true,
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
   "description": "Changes UI according to the current Neovim mode",
@@ -78,6 +78,31 @@
           "type": "boolean",
           "default": true,
           "description": "Apply mode color to title bar"
+        },
+        "nvim-ui-plus.colors.normal": {
+          "type": "string",
+          "default": "#94E2D5",
+          "description": "Color for normal mode (Catppuccin teal)"
+        },
+        "nvim-ui-plus.colors.insert": {
+          "type": "string",
+          "default": "#74C7EC",
+          "description": "Color for insert mode (Catppuccin sapphire)"
+        },
+        "nvim-ui-plus.colors.visual": {
+          "type": "string",
+          "default": "#CBA6F7",
+          "description": "Color for visual mode (Catppuccin mauve)"
+        },
+        "nvim-ui-plus.colors.replace": {
+          "type": "string",
+          "default": "#EBA0AC",
+          "description": "Color for replace mode (Catppuccin maroon)"
+        },
+        "nvim-ui-plus.colors.cmdline": {
+          "type": "string",
+          "default": "#FAB387",
+          "description": "Color for command line mode (Catppuccin peach)"
         }
       }
     }
