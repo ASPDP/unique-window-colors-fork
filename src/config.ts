@@ -5,17 +5,7 @@ import * as Meta from './generated/meta'
 interface NvimUiPlusConfig {
   enabled: { value: boolean }
   uiElements: {
-    editorCursor: { value: boolean }
-    inputValidation: { value: boolean }
-    panelTitle: { value: boolean }
-    peekView: { value: boolean }
-    tabs: { value: boolean }
-    activityBar: { value: boolean }
     titleBar: { value: boolean }
-    statusBar: { value: boolean }
-    editor: { value: boolean }
-    suggestWidget: { value: boolean }
-    lineNumbers: { value: boolean }
   }
   colors: {
     normal: { value: string }
@@ -31,17 +21,7 @@ export const nvimUiConfig = defineConfigObject('nvim-ui-plus', {
   enabled: Boolean,
 
   uiElements: {
-    editorCursor: Boolean,
-    inputValidation: Boolean,
-    panelTitle: Boolean,
-    peekView: Boolean,
-    tabs: Boolean,
-    activityBar: Boolean,
     titleBar: Boolean,
-    statusBar: Boolean,
-    editor: Boolean,
-    suggestWidget: Boolean,
-    lineNumbers: Boolean,
   },
 
   colors: {

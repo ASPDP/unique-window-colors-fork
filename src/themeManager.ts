@@ -10,25 +10,13 @@ interface ColorCustomizations {
 }
 
 // Define our UI element keys more strictly
-type UiElementKey = 'editorCursor' | 'inputValidation' | 'panelTitle' |
-  'peekView' | 'tabs' | 'activityBar' | 'titleBar' |
-  'statusBar' | 'editor' | 'suggestWidget' | 'lineNumbers'
+type UiElementKey =  'titleBar'
 
 // Define the correct interface for our configuration
 interface NvimUiPlusConfig {
   enabled: boolean
   uiElements: {
-    editorCursor: boolean
-    inputValidation: boolean
-    panelTitle: boolean
-    peekView: boolean
-    tabs: boolean
-    activityBar: boolean
     titleBar: boolean
-    statusBar: boolean
-    editor: boolean
-    suggestWidget: boolean
-    lineNumbers: boolean
   }
   colors: {
     normal: string
@@ -45,32 +33,7 @@ export function setupThemeManager() {
 
   // Map VSCode color customization keys to our UI element config keys
   const colorKeyMap: Record<string, UiElementKey> = {
-    'editorCursor.foreground': 'editorCursor',
-    'inputValidation.errorBorder': 'inputValidation',
-    'inputValidation.infoBorder': 'inputValidation',
-    'inputValidation.warningBorder': 'inputValidation',
-    'panelTitle.activeForeground': 'panelTitle',
-    'panelTitle.activeBorder': 'panelTitle',
-    'peekView.border': 'peekView',
-    'peekViewTitleLabel.foreground': 'peekView',
-    'tab.activeBorder': 'tabs',
-    'tab.activeBorderTop': 'tabs',
-    'tab.activeForeground': 'tabs',
-    'activityBarBadge.background': 'activityBar',
-    'activityBar.activeBorder': 'activityBar',
-    'activityBar.foreground': 'activityBar',
-    'statusBarItem.remoteBackground': 'statusBar',
-    'titleBar.activeForeground': 'titleBar',
-    'titleBar.border': 'titleBar',
-    'statusBar.border': 'statusBar',
-    'statusBar.foreground': 'statusBar',
-    'editor.selectionHighlightBorder': 'editor',
-    'editor.selectionForeground': 'editor',
-    'editor.findMatchBorder': 'editor',
-    'editorMultiCursor.primary.foreground': 'editor',
-    'editorMultiCursor.secondary.foreground': 'editor',
-    'editorSuggestWidget.border': 'suggestWidget',
-    'editorLineNumber.activeForeground': 'lineNumbers',
+    'titleBar.activeBackground': 'titleBar',
   }
 
   // Reactively update theme colors when mode changes

@@ -74,85 +74,10 @@
           "default": true,
           "description": "Enable Neovim UI+ theming"
         },
-        "nvim-ui-plus.uiElements.editorCursor": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to editor cursor"
-        },
-        "nvim-ui-plus.uiElements.inputValidation": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to input validation borders"
-        },
-        "nvim-ui-plus.uiElements.panelTitle": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to panel titles"
-        },
-        "nvim-ui-plus.uiElements.peekView": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to peek view elements"
-        },
-        "nvim-ui-plus.uiElements.tabs": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to tabs"
-        },
-        "nvim-ui-plus.uiElements.activityBar": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to activity bar elements"
-        },
         "nvim-ui-plus.uiElements.titleBar": {
           "type": "boolean",
           "default": true,
           "description": "Apply mode color to title bar"
-        },
-        "nvim-ui-plus.uiElements.statusBar": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to status bar elements"
-        },
-        "nvim-ui-plus.uiElements.editor": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to editor elements like selections"
-        },
-        "nvim-ui-plus.uiElements.suggestWidget": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to suggestion widget"
-        },
-        "nvim-ui-plus.uiElements.lineNumbers": {
-          "type": "boolean",
-          "default": true,
-          "description": "Apply mode color to active line numbers"
-        },
-        "nvim-ui-plus.colors.normal": {
-          "type": "string",
-          "default": "#94E2D5",
-          "description": "Color for normal mode (Catppuccin teal)"
-        },
-        "nvim-ui-plus.colors.insert": {
-          "type": "string",
-          "default": "#74C7EC",
-          "description": "Color for insert mode (Catppuccin sapphire)"
-        },
-        "nvim-ui-plus.colors.visual": {
-          "type": "string",
-          "default": "#CBA6F7",
-          "description": "Color for visual mode (Catppuccin mauve)"
-        },
-        "nvim-ui-plus.colors.replace": {
-          "type": "string",
-          "default": "#EBA0AC",
-          "description": "Color for replace mode (Catppuccin maroon)"
-        },
-        "nvim-ui-plus.colors.cmdline": {
-          "type": "string",
-          "default": "#FAB387",
-          "description": "Color for command line mode (Catppuccin peach)"
         }
       }
     }

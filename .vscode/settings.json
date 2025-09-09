@@ -46,4 +46,12 @@
     "jsonc",
     "yaml"
   ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#5B0B30",
+    "titleBar.activeBackground": "#800F43",
+    "titleBar.inactiveBackground": "#800F43",
+    "titleBar.activeForeground": "#FFFCFD",
+    "statusBar.background": "#800F43",
+    "statusBar.foreground": "#FFFCFD"
+  },
 }
