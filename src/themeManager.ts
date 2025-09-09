@@ -129,8 +129,8 @@ export function setupThemeManager() {
         }
       }
 
-      // Apply the customizations
-      workbenchConfig.update('colorCustomizations', newColorCustomizations, ConfigurationTarget.Workspace)
+      // Apply the customizations globally (User settings)
+      workbenchConfig.update('colorCustomizations', newColorCustomizations, ConfigurationTarget.Global)
         .then(() => {
           logger.info(`Applied ${mode} mode theme colors`)
         }, (error: Error) => {
@@ -148,7 +148,7 @@ export function setupThemeManager() {
         workspace.getConfiguration('workbench').update(
           'colorCustomizations',
           originalColorCustomizations,
-          ConfigurationTarget.Workspace,
+          ConfigurationTarget.Global,
         ).then(() => {
           logger.info('Restored original color customizations')
           originalColorCustomizations = undefined
