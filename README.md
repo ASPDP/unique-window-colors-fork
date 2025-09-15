@@ -83,25 +83,15 @@ You can customize everything through VSCode settings:
 
 <!-- configs -->
 
-| Key                                       | Description                                         | Type      | Default     |
-| ----------------------------------------- | --------------------------------------------------- | --------- | ----------- |
-| `nvim-ui-plus.enabled`                    | Enable Neovim UI+ theming                           | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.editorCursor`    | Apply mode color to editor cursor                   | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.inputValidation` | Apply mode color to input validation borders        | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.panelTitle`      | Apply mode color to panel titles                    | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.peekView`        | Apply mode color to peek view elements              | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.tabs`            | Apply mode color to tabs                            | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.activityBar`     | Apply mode color to activity bar elements           | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.titleBar`        | Apply mode color to title bar                       | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.statusBar`       | Apply mode color to status bar elements             | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.editor`          | Apply mode color to editor elements like selections | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.suggestWidget`   | Apply mode color to suggestion widget               | `boolean` | `true`      |
-| `nvim-ui-plus.uiElements.lineNumbers`     | Apply mode color to active line numbers             | `boolean` | `true`      |
-| `nvim-ui-plus.colors.normal`              | Color for normal mode (Catppuccin teal)             | `string`  | `"#94E2D5"` |
-| `nvim-ui-plus.colors.insert`              | Color for insert mode (Catppuccin sapphire)         | `string`  | `"#74C7EC"` |
-| `nvim-ui-plus.colors.visual`              | Color for visual mode (Catppuccin mauve)            | `string`  | `"#CBA6F7"` |
-| `nvim-ui-plus.colors.replace`             | Color for replace mode (Catppuccin maroon)          | `string`  | `"#EBA0AC"` |
-| `nvim-ui-plus.colors.cmdline`             | Color for command line mode (Catppuccin peach)      | `string`  | `"#FAB387"` |
+| Key                                | Description                                    | Type      | Default     |
+| ---------------------------------- | ---------------------------------------------- | --------- | ----------- |
+| `nvim-ui-plus.enabled`             | Enable Neovim UI+ theming                      | `boolean` | `true`      |
+| `nvim-ui-plus.uiElements.titleBar` | Apply mode color to title bar                  | `boolean` | `true`      |
+| `nvim-ui-plus.colors.normal`       | Color for normal mode (Catppuccin teal)        | `string`  | `"#94E2D5"` |
+| `nvim-ui-plus.colors.insert`       | Color for insert mode (Catppuccin sapphire)    | `string`  | `"#74C7EC"` |
+| `nvim-ui-plus.colors.visual`       | Color for visual mode (Catppuccin mauve)       | `string`  | `"#CBA6F7"` |
+| `nvim-ui-plus.colors.replace`      | Color for replace mode (Catppuccin maroon)     | `string`  | `"#EBA0AC"` |
+| `nvim-ui-plus.colors.cmdline`      | Color for command line mode (Catppuccin peach) | `string`  | `"#FAB387"` |
 
 <!-- configs -->
 
