@@ -28,8 +28,10 @@ interface NvimUiPlusConfig {
 }
 
 export function setupThemeManager() {
-  // Store original color customizations to restore later
-  let originalColorCustomizations: ColorCustomizations | undefined
+  // Track only the original global value for the single key we manage
+  let recordedOriginal = false
+  let originalTitleBarActiveBackground: string | undefined
+  let originalHadTitleBarKey = false
 
   // Map VSCode color customization keys to our UI element config keys
   const colorKeyMap: Record<string, UiElementKey> = {
@@ -76,26 +78,41 @@ export function setupThemeManager() {
       }
       const workbenchConfig = workspace.getConfiguration('workbench')
 
-      // Store original customizations if we haven't already
-      if (originalColorCustomizations === undefined) {
-        originalColorCustomizations = workbenchConfig.get('colorCustomizations') || {}
-        logger.info('Stored original color customizations')
+      // Record the original Global value for the single key once
+      if (!recordedOriginal) {
+        const inspected = workbenchConfig.inspect<ColorCustomizations>('colorCustomizations')
+        const globalValue = (inspected?.globalValue ?? {}) as ColorCustomizations
+        if (Object.prototype.hasOwnProperty.call(globalValue, 'titleBar.activeBackground')) {
+          originalHadTitleBarKey = true
+          originalTitleBarActiveBackground = globalValue['titleBar.activeBackground']
+        }
+        recordedOriginal = true
+        logger.info('Stored original global titleBar.activeBackground')
       }
 
-      // Create new color customizations
-      const newColorCustomizations = { ...originalColorCustomizations }
+      // Start from the current Global value only (avoid copying workspace values)
+      const inspectedNow = workbenchConfig.inspect<ColorCustomizations>('colorCustomizations')
+      const currentGlobal = (inspectedNow?.globalValue ?? {}) as ColorCustomizations
+      const newGlobal: ColorCustomizations = { ...currentGlobal }
 
-      // Apply color to each enabled UI element
-      for (const [colorKey, configKey] of Object.entries(colorKeyMap)) {
-        if (config.uiElements[configKey]) {
-          newColorCustomizations[colorKey] = modeColor
+      // Apply color to the single key we manage only when enabled
+      if (config.uiElements.titleBar) {
+        newGlobal['titleBar.activeBackground'] = modeColor
+      }
+      else if (recordedOriginal) {
+        // If not enabled, ensure we don't leave our override behind
+        if (originalHadTitleBarKey) {
+          newGlobal['titleBar.activeBackground'] = originalTitleBarActiveBackground as string
+        }
+        else {
+          delete newGlobal['titleBar.activeBackground']
         }
       }
 
-      // Apply the customizations globally (User settings)
-      workbenchConfig.update('colorCustomizations', newColorCustomizations, ConfigurationTarget.Global)
+      // Write back only the global object with our single change
+      workbenchConfig.update('colorCustomizations', newGlobal, ConfigurationTarget.Global)
         .then(() => {
-          logger.info(`Applied ${mode} mode theme colors`)
+          logger.info(`Applied ${mode} mode titleBar color`)
         }, (error: Error) => {
           logger.error('Failed to update colorCustomizations:', error)
         })
@@ -106,18 +123,30 @@ export function setupThemeManager() {
   })
 
   function restoreOriginalColors() {
-    if (originalColorCustomizations !== undefined) {
+    if (recordedOriginal) {
       try {
-        workspace.getConfiguration('workbench').update(
-          'colorCustomizations',
-          originalColorCustomizations,
-          ConfigurationTarget.Global,
-        ).then(() => {
-          logger.info('Restored original color customizations')
-          originalColorCustomizations = undefined
-        }, (error: Error) => {
-          logger.error('Failed to restore original colorCustomizations:', error)
-        })
+        const workbenchConfig = workspace.getConfiguration('workbench')
+        const inspected = workbenchConfig.inspect<ColorCustomizations>('colorCustomizations')
+        const currentGlobal = (inspected?.globalValue ?? {}) as ColorCustomizations
+        const restored: ColorCustomizations = { ...currentGlobal }
+
+        if (originalHadTitleBarKey) {
+          restored['titleBar.activeBackground'] = originalTitleBarActiveBackground as string
+        }
+        else {
+          delete restored['titleBar.activeBackground']
+        }
+
+        workbenchConfig.update('colorCustomizations', restored, ConfigurationTarget.Global)
+          .then(() => {
+            logger.info('Restored original global titleBar.activeBackground')
+            // Reset tracking so a future activation will re-record
+            recordedOriginal = false
+            originalHadTitleBarKey = false
+            originalTitleBarActiveBackground = undefined
+          }, (error: Error) => {
+            logger.error('Failed to restore original colorCustomizations key:', error)
+          })
       }
       catch (error) {
         logger.error('Error restoring colors:', error)
