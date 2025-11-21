@@ -1,7 +1,19 @@
 // import * as Color from 'color';
 import Color from 'color';
 import * as fs from 'fs';
-import { ExtensionContext, workspace, WorkspaceFolder } from 'vscode';
+import { ExtensionContext, workspace, WorkspaceFolder, ConfigurationTarget } from 'vscode';
+
+function getSanitizedColorCustomizations(): Record<string, any> {
+  // Only use workspace-scope color customizations to avoid pulling in global settings
+  const inspected = workspace
+    .getConfiguration('workbench')
+    .inspect<Record<string, any>>('colorCustomizations');
+
+  const raw = (inspected?.workspaceValue ?? {}) as Record<string, any>;
+  const clone = JSON.parse(JSON.stringify(raw));
+  delete clone['titleBar.activeBackground'];
+  return clone;
+}
 
 interface ColorsInterface {
   sideBarColor_dark: Color;
@@ -27,7 +39,7 @@ export class SettingsFileDeleter {
     const settingsfile = this.workspaceRoot + '/.vscode/settings.json';
     const vscodeSettingsDir = this.workspaceRoot + '/.vscode';
     const settingsFileJson = JSON.parse((fs.readFileSync(settingsfile, "utf8")));
-    const cc = JSON.parse(JSON.stringify(workspace.getConfiguration('workbench').get('colorCustomizations')));
+  const cc = getSanitizedColorCustomizations();
 
     const deleteSettingsFileUponExit = JSON.parse(JSON.stringify(workspace.getConfiguration('windowColors').get<string>('🌈 DeleteSettingsFileUponExit')));
 
@@ -39,7 +51,6 @@ export class SettingsFileDeleter {
 
       const aColorWasModified =
         (cc['activityBar.background'] !== this.colors.sideBarColor_dark.hex() && cc['activityBar.background'] !== this.colors.sideBarColor_light.hex()) ||
-        (cc['titleBar.activeBackground'] !== this.colors.titleBarColor_dark.hex() && cc['titleBar.activeBackground'] !== this.colors.titleBarColor_light.hex()) ||
         (cc['titleBar.inactiveBackground'] !== this.colors.titleBarColor_dark.hex() && cc['titleBar.inactiveBackground'] !== this.colors.titleBarColor_light.hex()) ||
         (cc['titleBar.activeForeground'] !== this.colors.titleBarTextColor_dark.hex() && cc['titleBar.activeForeground'] !== this.colors.titleBarTextColor_light.hex()) ||
         (cc['statusBar.background'] !== this.colors.titleBarColor_dark.hex() && cc['statusBar.background'] !== this.colors.titleBarColor_light.hex()) ||
@@ -73,7 +84,7 @@ export function activate(context: ExtensionContext) {
   }
 
   /** retain initial unrelated colorCustomizations*/
-  const cc = JSON.parse(JSON.stringify(workspace.getConfiguration('workbench').get('colorCustomizations')));
+  const cc = getSanitizedColorCustomizations();
 
   let sideBarColor: Color = Color('#' + stringToARGB(workspaceRoot));
   let titleBarTextColor: Color = Color('#ffffff');
@@ -116,7 +127,7 @@ export function activate(context: ExtensionContext) {
 
   let doUpdateColors = true;
 
-  if (cc && (cc['activityBar.background'] || cc['titleBar.activeBackground'] || cc['titleBar.inactiveBackground'] || cc['titleBar.activeForeground'] || cc['statusBar.foreground'] || cc['statusBar.background'])) {
+  if (cc && (cc['activityBar.background'] ||  cc['titleBar.inactiveBackground'] || cc['titleBar.activeForeground'] || cc['statusBar.foreground'] || cc['statusBar.background'])) {
     //don't overwrite
     doUpdateColors = false;
   }
@@ -129,7 +140,6 @@ export function activate(context: ExtensionContext) {
 
     const newColors = {
       "activityBar.background": doRemoveColors ? undefined : sideBarColor.hex(),
-      "titleBar.activeBackground": doRemoveColors ? undefined : titleBarColor.hex(),
       "titleBar.inactiveBackground": doRemoveColors ? undefined : titleBarColor.hex(),
       "titleBar.activeForeground": doRemoveColors ? undefined : titleBarTextColor.hex(),
       "statusBar.background": doRemoveColors ? undefined : titleBarColor.hex(),
@@ -138,7 +148,10 @@ export function activate(context: ExtensionContext) {
       // "sideBarSectionHeader.background": titleBarColor.hex(),
       // "sideBarSectionHeader.foreground": titleBarTextColor.hex()
     };
-    workspace.getConfiguration('workbench').update('colorCustomizations', { ...cc, ...newColors }, false);
+    // Explicitly write to workspace settings only (never global)
+    workspace
+      .getConfiguration('workbench')
+      .update('colorCustomizations', { ...cc, ...newColors }, ConfigurationTarget.Workspace);
   }
 
   const settingsFileDeleter =

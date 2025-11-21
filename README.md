@@ -3,7 +3,7 @@
 
 fixed and working!
 
-# Window Colors
+# Window Colors (Kruger)
 
 Uniquely and automatically colors each VSCode window.
 
@@ -17,7 +17,6 @@ This extension gives each new VS Code window a unique color based on a hash of t
 ```javascript
   "workbench.colorCustomizations": {
     "activityBar.background": "#13332E",
-    "titleBar.activeBackground": "#19423B",
     "titleBar.activeForeground": "#F6FBFB"
   }
 ```

@@ -1,6 +1,6 @@
 {
-  "name": "alt-unique-window-colors",
-  "displayName": "Window Colors including status bar",
+  "name": "kruger-unique-window-colors",
+  "displayName": "Window Colors including status bar (Kruger)",
   "description": "Fork of stuart.unique-window-colors that also colors status bar.",
   "icon": "img/icon_602.png",
   "version": "1.0.53",
@@ -69,7 +69,7 @@
     }
   },
   "scripts": {
-    "bundle": "rm -rf out && node build_it.mjs && vsce package --allow-star-activation",
+    "bundle": "node build_it.mjs && vsce package --allow-star-activation",
     "//vscode:prepublish": "npm run compile",
     "//compile": "tsc -p ./",
     "//watch": "tsc -watch -p ./",
