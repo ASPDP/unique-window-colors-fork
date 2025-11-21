@@ -3,10 +3,10 @@
   "displayName": "Window Colors including status bar (Kruger)",
   "description": "Fork of stuart.unique-window-colors that also colors status bar.",
   "icon": "img/icon_602.png",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "publisher": "qpwo",
   "author": {
-    "name": "Stuart Robinson"
+    "name": "ASPDP"
   },
   "engines": {
     "vscode": "^1.20.0"
